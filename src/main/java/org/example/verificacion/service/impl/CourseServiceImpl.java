@@ -1,13 +1,12 @@
 package org.example.verificacion.service.impl;
 
+import java.util.List;
 import org.example.verificacion.dto.CourseRequest;
 import org.example.verificacion.exception.ResourceNotFoundException;
 import org.example.verificacion.model.Course;
 import org.example.verificacion.repository.CourseRepository;
 import org.example.verificacion.service.CourseService;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class CourseServiceImpl implements CourseService {
@@ -20,7 +19,7 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public Course create(final CourseRequest request) {
-        Course course = new Course(
+        final Course course = new Course(
                 request.getName(),
                 request.getDescription(),
                 request.getDurationHours(),
@@ -42,7 +41,7 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public Course update(final Long id, final CourseRequest request) {
-        Course course = findById(id);
+        final Course course = findById(id);
         course.update(
                 request.getName(),
                 request.getDescription(),
@@ -54,7 +53,7 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public void delete(final Long id) {
-        Course course = findById(id);
+        final Course course = findById(id);
         repository.delete(course);
     }
 }

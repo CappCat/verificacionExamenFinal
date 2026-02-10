@@ -1,9 +1,8 @@
 package org.example.verificacion.service;
 
+import java.util.List;
 import org.example.verificacion.dto.CourseRequest;
 import org.example.verificacion.model.Course;
-
-import java.util.List;
 
 public interface CourseService {
 
